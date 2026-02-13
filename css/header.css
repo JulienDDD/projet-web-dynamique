@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +7,8 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+      font-family: "Outfit", sans-serif;
+
 }
 
 header {
@@ -78,11 +81,23 @@ header {
     flex-shrink: 0;
 }
 
+.header-center{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-shrink: 1;
+    
+}
+.header-search{
+      font-family: "Outfit", sans-serif;
+    font-size: 15px;
+    padding: 5px;
+}
 .header-link {
     text-decoration: none;
     color: #E7873B;
-    font-size: 12px;
-    font-weight: 400;
+font-size: 12px;
+font-weight: 400;
     white-space: nowrap;
     transition: color 0.2s;
 }
@@ -93,8 +108,8 @@ header {
 
 .separateur {
     color: #ccc;
-    font-size: 14px;
-    font-weight: 300;
+font-size: 14px;
+font-weight: 300;
     user-select: none;
 }
 
@@ -193,6 +208,10 @@ header {
 
     .header-right {
         order: 3;
+        display: none;
+    }
+    .header-center{
+     
         display: none;
     }
 .header-nav {
