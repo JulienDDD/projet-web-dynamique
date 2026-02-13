@@ -47,10 +47,16 @@ header {
 .header-nav {
     background-color: rgb(240, 237, 237);
     flex: 1;
+        min-height: 5vh;
+
     display: flex;
     justify-content: center;
 }
-
+.hero-acceuil{
+    padding-top: 29px;
+    padding-bottom: 29px;
+    overflow: hidden;
+}
 .nav-list {
     display: flex;
     list-style: none;
@@ -165,6 +171,74 @@ font-weight: 300;
     color: white;
 }
 
+
+.hero-acceuil {
+    margin: 0px auto;
+    align-items: center;
+    padding: 0 20px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../img/efrei-hero.jpg");
+     justify-content: center; 
+     align-items: center;
+     display: flex;
+
+}
+.hero-content h1 {
+    font-family: "Bebas Neue", cursive;
+    font-size: 36px;
+    color: #F38E03;
+    margin-bottom: 15px;
+}
+.hero-content p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+.hero-content {
+    margin-bottom: 20px;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+/* CSS BTN RÉCUPÉRÉ SUR CODEPEN (Et modifié) RIPPLE */
+.hk-btn {
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 30px;
+  border-radius: 15px;
+  color: #fff;
+  background-color: #f38e03;
+  position: relative;
+  overflow: hidden;
+}
+
+.hk-ripple::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.25) 10%,
+    transparent 10%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease-out;
+}
+.hk-ripple:hover::after {
+  transform: translate(-50%, -50%) scale(5);
+}
+
 @media (max-width: 1024px) {
     .header-main {
         padding: 10px 20px;
@@ -177,7 +251,10 @@ font-weight: 300;
     .nav-list li a {
         font-size: 11px;
     }
-
+.hero-content {
+        width: 90%;
+        margin: 20px auto;
+    }
     .header-link {
         font-size: 11px;
     }
@@ -248,19 +325,11 @@ font-weight: 300;
     .header-img {
         width: 120px;
     }
-}
-
-@media (max-width: 480px) {
-    .header-main {
-        padding: 8px 10px;
+    .hero-acceuil{
+        width: 100%;
     }
-
-    .header-img {
-        width: 100px;
-    }
-
-    .nav-list li a {
-        font-size: 12px;
-        padding: 12px 10px;
+    .hero-content {
+        width: 90%;
+        margin: 20px auto;
     }
 }
