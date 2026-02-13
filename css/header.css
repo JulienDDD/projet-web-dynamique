@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-top-bar {
+    height: 4px;
+    background: linear-gradient(
+        to right,
+        #0072bc 0%,
+        #0072bc 25%,
+        #00a1de 25%,
+        #00a1de 50%,
+        #f7941d 50%,
+        #f7941d 75%,
+        #ed1c24 75%,
+        #ed1c24 100%
+    );
+}
+
+.header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 9px 5px;
+    background-color: #163767;
+}
+
+.header-left {
+    flex-shrink: 0;
+}
+
+.logo-link {
+    display: block;
+}
+
+.header-img {
+    width: 150px;
+    height: auto;
+}
+
+.header-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #E7873B;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.nav-list li a:hover {
+    color: #f56403;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.header-link {
+    text-decoration: none;
+    color: #E7873B;
+    font-size: 12px;
+    font-weight: 400;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.header-link:hover {
+    color: white;
+}
+
+.separator {
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 300;
+    user-select: none;
+}
+
+.header-icon {
+    display: flex;
+    align-items: center;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.header-icon:hover {
+    color: #0072bc;
+}
+
+.lang-flag {
+    display: flex;
+    align-items: center;
+    margin-left: 2px;
+}
+
+.lang-flag svg {
+    border-radius: 2px;
+    box-shadow: 0 0 1px rgba(0,0,0,0.3);
+}
+
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2.5px;
+    background-color: #003b5c;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+@media (max-width: 1024px) {
+    .header-main {
+        padding: 10px 20px;
+    }
+
+    .nav-list {
+        gap: 18px;
+    }
+
+    .nav-list li a {
+        font-size: 11px;
+    }
+
+    .header-link {
+        font-size: 11px;
+    }
+
+    .header-right {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .header-main {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+
+    .header-left {
+        order: 1;
+    }
+
+    .hamburger {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .header-right {
+        order: 3;
+        display: none;
+    }
+
+    .header-nav {
+        order: 4;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+
+    .header-nav.open {
+        max-height: 400px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    .nav-list li {
+        width: 100%;
+        border-top: 1px solid #eee;
+    }
+
+    .nav-list li a {
+        display: block;
+        padding: 14px 10px;
+        font-size: 13px;
+    }
+
+    .nav-list li a:hover {
+        background-color: #f5f5f5;
+    }
+
+    .header-img {
+        width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-main {
+        padding: 8px 10px;
+    }
+
+    .header-img {
+        width: 100px;
+    }
+
+    .nav-list li a {
+        font-size: 12px;
+        padding: 12px 10px;
+    }
+}
